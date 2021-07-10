@@ -19,10 +19,10 @@ def flaskThread():
         flaskapp.flaskRunner()
         
         
-        lock.acquire()
-        keypressed = True
-        lock.release()
-        time.sleep(1) # wait 5 seconds
+        #lock.acquire()
+        
+        #lock.release()
+        time.sleep(5) 
 
 def logicThread():
     global gameTime, gameStatus, pushbutton1, pushbutton2, endGame, endIt
@@ -48,16 +48,17 @@ def logicThread():
             #lock.acquire()
             #print(flaskapp.gameTime)
             #lock.release()
-            time.sleep(0.1)   #0.00001   
+            time.sleep(0.001)   #0.00001   
 
 def buttonThread():
     global gameTime, pushbutton1, pushbutton2
     while True:
         button.waitforpushbutton()
-        print(button.pushbutton1)
-        print(button.pushbutton2)
+        
+        print('pushbutton1',button.pushbutton1)
+        print('pushbutton2',button.pushbutton2)
         #showTimer(0,11)
-        time.sleep(0.2) 
+        time.sleep(1) 
         
 def ledThread():
     global pushbutton1, pushbutton2, endIt
@@ -80,7 +81,7 @@ def ledThread():
         
             
         
-        time.sleep(0.2) # 0.001
+        time.sleep(1) # 0.001
 
 # create threads
 thread1 = threading.Thread(target = flaskThread, args = ())
