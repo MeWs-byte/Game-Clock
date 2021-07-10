@@ -10,9 +10,9 @@ This is a pi zero based gameclock to keep track of time during the game of Go, c
 
 ## What do I need to build it?
 
- Â-5641AS 7-segment display
- Â-8x 100 Ohm , 2 x 10k Ohm , 2 x 330 Ohm Resistors
- Â-2 LEDs
- Â-2 Pushbuttons
- Â-Pi Zero
+-5641AS 7-segment display
+-8x 100 Ohm , 2 x 10k Ohm , 2 x 330 Ohm Resistors
+-2 LEDs
+-2 Pushbuttons
+-Pi Zero
  Â° 
