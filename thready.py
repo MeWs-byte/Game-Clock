@@ -48,16 +48,16 @@ def logicThread():
             #lock.acquire()
             #print(flaskapp.gameTime)
             #lock.release()
-            time.sleep(0.00001)      
+            time.sleep(0.1)   #0.00001   
 
-def renderThread():
+def buttonThread():
     global gameTime, pushbutton1, pushbutton2
     while True:
         button.waitforpushbutton()
         print(button.pushbutton1)
         print(button.pushbutton2)
         #showTimer(0,11)
-        time.sleep(0.1) 
+        time.sleep(0.2) 
         
 def ledThread():
     global pushbutton1, pushbutton2, endIt
@@ -72,17 +72,20 @@ def ledThread():
             blinky.ledTwoOff() 
             
         if button.endIt == 'ended':
-            blinky.ledOneTwoQuickBlink()  
-                 
+            blinky.ledOneTwoQuickBlink()
+            time.sleep(1)  
+            button.endIt = 'Clear'
+            button.pushbutton2 = 'off'
+            button.pushbutton1 = 'off'                 
         
             
         
-        time.sleep(0.1) # 0.001
+        time.sleep(0.2) # 0.001
 
 # create threads
 thread1 = threading.Thread(target = flaskThread, args = ())
 thread2 = threading.Thread(target = logicThread, args = ())
-thread3 = threading.Thread(target = renderThread, args = ())
+thread3 = threading.Thread(target = buttonThread, args = ())
 thread4 = threading.Thread(target = ledThread, args = ())
 
 # Starting the threads  

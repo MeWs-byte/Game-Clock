@@ -71,6 +71,89 @@ def ledOneTwoQuickBlink():
     GPIO.output(15, GPIO.LOW) # Turn on
     
     time.sleep(0.2)
+    GPIO.output(14, GPIO.HIGH) # Turn on
+ 
+    time.sleep(0.2)
+    GPIO.output(14, GPIO.LOW) # Turn on
+ 
+    time.sleep(0.2)   
+    GPIO.output(15, GPIO.HIGH) # Turn on
+    
+    time.sleep(0.2)
+
+    GPIO.output(15, GPIO.LOW) # Turn on
+    
+    time.sleep(0.2)
+    
+    GPIO.output(14, GPIO.HIGH) # Turn on
+ 
+    time.sleep(0.2)
+    GPIO.output(14, GPIO.LOW) # Turn on
+ 
+    time.sleep(0.2)   
+    GPIO.output(15, GPIO.HIGH) # Turn on
+    
+    time.sleep(0.2)
+
+    GPIO.output(15, GPIO.LOW) # Turn on
+    
+    time.sleep(0.2)
+    
+    GPIO.output(14, GPIO.HIGH) # Turn on
+ 
+    time.sleep(0.2)
+    GPIO.output(14, GPIO.LOW) # Turn on
+ 
+    time.sleep(0.2)   
+    GPIO.output(15, GPIO.HIGH) # Turn on
+    
+    time.sleep(0.2)
+
+    GPIO.output(15, GPIO.LOW) # Turn on
+    
+    time.sleep(0.2)
+    
+    GPIO.output(14, GPIO.HIGH) # Turn on
+ 
+    time.sleep(0.2)
+    GPIO.output(14, GPIO.LOW) # Turn on
+ 
+    time.sleep(0.2)   
+    GPIO.output(15, GPIO.HIGH) # Turn on
+    
+    time.sleep(0.2)
+
+    GPIO.output(15, GPIO.LOW) # Turn on
+    
+    time.sleep(0.2)
+    
+    GPIO.output(14, GPIO.HIGH) # Turn on
+ 
+    time.sleep(0.2)
+    GPIO.output(14, GPIO.LOW) # Turn on
+ 
+    time.sleep(0.2)   
+    GPIO.output(15, GPIO.HIGH) # Turn on
+    
+    time.sleep(0.2)
+
+    GPIO.output(15, GPIO.LOW) # Turn on
+    
+    time.sleep(0.2)
+    
+    GPIO.output(14, GPIO.HIGH) # Turn on
+ 
+    time.sleep(0.2)
+    GPIO.output(14, GPIO.LOW) # Turn on
+ 
+    time.sleep(0.2)   
+    GPIO.output(15, GPIO.HIGH) # Turn on
+    
+    time.sleep(0.2)
+
+    GPIO.output(15, GPIO.LOW) # Turn on
+    
+    time.sleep(0.2)
     
 def ledOneBlink():
     
