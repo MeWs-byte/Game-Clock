@@ -1,0 +1,24 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+      
+      </head>
+    
+    <div class="w3-container w3-monospace">
+    <h2>GobanTimer</h2> 
+    <form >
+    <input type="datetime" name="GameTime" value="">
+    </form>
+
+  
+    
+    
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul>
+        {% for message in messages %}
+        <li style="color:red">{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
