@@ -83,7 +83,7 @@ def show_number(val):  #Base 10
  
 # +++ Main +++
 def showTimer(mins,sec):
-    global pushbutton1, pushbutton2
+    global pushbutton1, pushbutton2, newTime
     global gameStatus 
     global endGame
     #mins = 15
@@ -92,7 +92,7 @@ def showTimer(mins,sec):
     x = time.time()
     y = x + 1.0
     try:
-        global pushbutton1, pushbutton2, endIt
+        global pushbutton1, pushbutton2, endIt, newTime
         while mins > -1 and button.pushbutton1 == "on":
             print('this is n ')
             print(n)
@@ -110,6 +110,9 @@ def showTimer(mins,sec):
                 show_number(n)
                 x = time.time()      
             sec = sec - 1
+            button.newTime = n
+            print(button.newTime)
+            print('this is button.newTime just about this messsaaage')
             
             if (sec == -1):
                 sec = 59
@@ -130,7 +133,7 @@ def showTimer(mins,sec):
     print('\nDone')
     
 def showTimerb(mins,sec):
-    global pushbutton1, pushbutton2
+    global pushbutton1, pushbutton2, newTime
     global gameStatus   
     global endGame 
     #mins = 15
@@ -139,7 +142,7 @@ def showTimerb(mins,sec):
     x = time.time()
     y = x + 1.0
     try:
-        global pushbutton1, pushbutton2, endIt
+        global pushbutton1, pushbutton2, endIt, newTime
         while mins > -1 and button.pushbutton2 == "on":
             if n == 0:
                 button.endIt = 'ended'
@@ -154,7 +157,10 @@ def showTimerb(mins,sec):
                 show_number(n)
                 x = time.time()      
             sec = sec - 1
-            
+            button.newTime = n
+            print(button.newTime)
+            print('this is button.newTime just about this messsaaage')
+                        
             if (sec == -1):
                 sec = 59
                 mins = mins - 1
@@ -169,3 +175,93 @@ def showTimerb(mins,sec):
 
    
     print('\nDone')
+   
+   
+   
+def showTimerc(mins,sec):
+    global pushbutton1, pushbutton2, newTime
+    global gameStatus   
+    global endGame 
+    #mins = 15
+    #sec = 0
+    n = mins * 100 + sec
+    x = time.time()
+    y = x + 1.0
+    try:
+        global pushbutton1, pushbutton2, endIt, newTime
+        while mins > -1 and button.pushbutton1 == "on":
+            if n == 0:
+                button.endIt = 'ended'
+                button.pushbutton1 = 'off'
+                button.pushbutton2 = 'off'
+                print('game has ended, player 2 wins')
+                gameStatus = 'ended'
+                endGame = 'True'   
+                blinky.ledOneBlink()         
+            print(n)
+            while x < y:
+                show_number(n)
+                x = time.time()      
+            sec = sec - 1
+            button.newTime = n
+            print(button.newTime)
+            print('this is button.newTime just about this messsaaage')
+                        
+            if (sec == -1):
+                sec = 59
+                mins = mins - 1
+            n = mins * 100 + sec
+            y = y + 1.0
+        
+        
+        
+    
+    except KeyboardInterrupt:
+        GPIO.cleanup()
+
+   
+    print('\nDone') 
+    
+def showTimerd(mins,sec):
+    global pushbutton1, pushbutton2, newTimeb
+    global gameStatus   
+    global endGame 
+    #mins = 15
+    #sec = 0
+    n = mins * 100 + sec
+    x = time.time()
+    y = x + 1.0
+    try:
+        global pushbutton1, pushbutton2, endIt, newTimeb
+        while mins > -1 and button.pushbutton2 == "on":
+            if n == 0:
+                button.endIt = 'ended'
+                button.pushbutton1 = 'off'
+                button.pushbutton2 = 'off'
+                print('game has ended, player 2 wins')
+                gameStatus = 'ended'
+                endGame = 'True'   
+                blinky.ledOneBlink()         
+            print(n)
+            while x < y:
+                show_number(n)
+                x = time.time()      
+            sec = sec - 1
+            button.newTimeb = n
+            print(button.newTimeb)
+            print('this is button.newTimebbbbbbb just about this messsaaage')
+                        
+            if (sec == -1):
+                sec = 59
+                mins = mins - 1
+            n = mins * 100 + sec
+            y = y + 1.0
+        
+        
+        
+    
+    except KeyboardInterrupt:
+        GPIO.cleanup()
+
+   
+    print('\nDone') 

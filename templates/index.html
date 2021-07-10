@@ -6,11 +6,24 @@
     
     <div class="w3-container w3-monospace">
     <h2>GobanTimer</h2> 
+
+
+    <p>Game Mode 1: each player will get a fixed amount of minutes every turn.</p>
     <form >
     <input type="datetime" name="GameTime" value="">
     </form>
 
-  
+ 
+    <p>Game Mode 2: each player will get a dedicated amount of minutes for the entire game.</p>
+    <form >
+    <input type="datetime" name="GameTimeB" value="">
+    </form>
+    
+    <style>
+      body {
+        background-image: url('/home/pi/Go-Clock/templates/img.jpeg ');
+      }
+      </style> 
     
     
     {% with messages = get_flashed_messages() %}

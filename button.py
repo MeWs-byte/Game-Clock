@@ -2,6 +2,8 @@ from gpiozero import Button
 from time import sleep
 import time
 
+newTime = 100000
+newTimeb = 100000
 bBtn = Button(26, pull_up=False)
 bBtnn = Button(16, pull_up=False)
 pushbutton1 = ''

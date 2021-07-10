@@ -2,7 +2,7 @@
 
 import threading
 import time
-from segmentTimer import showTimer, showTimerb, endGame #, showTimerb
+from segmentTimer import showTimer, showTimerb,showTimerc,showTimerd, endGame, showTimerc #, showTimerb
 from datetime import datetime, timedelta
 import flaskapp
 import button
@@ -25,7 +25,7 @@ def flaskThread():
         time.sleep(5) 
 
 def logicThread():
-    global gameTime, gameStatus, pushbutton1, pushbutton2, endGame, endIt
+    global gameTime, gameTimeB, gameStatus, pushbutton1, pushbutton2, endGame, endIt, newTime, newTimeb
     while True:
         print(flaskapp.gameTime)
         print(flaskapp.gameStatus)
@@ -39,8 +39,32 @@ def logicThread():
                 
             if flaskapp.gameStatus == 'started' and button.pushbutton2 == 'on':
                 showTimerb(int(flaskapp.gameTime),00)
-                #button.pushbutton1 = 'on'
-                #button.pushbutton2 = 'off'
+                
+            if flaskapp.gameStatus == 'startedB' and button.pushbutton1 == 'on':
+                if button.newTime == 100000:
+                
+                    showTimerc(int(flaskapp.gameTimeB),00)
+                    #button.pushbutton1 = 'off'
+                    #button.pushbutton2 = 'on'
+                    print(button.newTime)
+                    print('thisis newtime ba')
+                else:
+                    m, s = divmod(button.newTime, 60)
+                    
+                    showTimerc(int(m),int(s))
+                    
+                      
+            if flaskapp.gameStatus == 'startedB' and button.pushbutton2 == 'on':
+                if button.newTimeb == 100000:
+                    showTimerd(int(flaskapp.gameTimeB),00)                
+                    #button.pushbutton1 = 'on'
+                    #button.pushbutton2 = 'off'
+                    print(button.newTimeb)
+                    print('thisis newtime bb')
+                else:
+                    m, s = divmod(button.newTimeb, 60)
+                    
+                    showTimerd(int(m),int(s))                
             
             #if button.pushbutton2 == 'on' and flaskapp.gameStatus == 'started':
             #    showTimerb(int(flaskapp.gameTime),00)

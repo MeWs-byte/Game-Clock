@@ -3,6 +3,7 @@ from segmentTimer import showTimer
 
 
 gameTime = ""
+gameTimeB = ""
 lastGameTimePlayer1 = ""
 lastGameTimePlayer2 = ""
 gameStart = ""
@@ -14,7 +15,7 @@ app.secret_key = b'_1#y2l"F4Q8z\n\xec]/'
 @app.route('/index/', methods=['GET', 'POST'])      # get a mini dash going here to control all the states and see incoming alarm
 def index():
     
-    global gameTime, gameStatus
+    global gameTime, gameStatus, gameTimeB
     
     if request.method == "POST":
         try:
@@ -28,10 +29,14 @@ def index():
     if request.method == "GET" and request.args.get("GameTime", ""):
         gameTime = request.args.get("GameTime", "")
         print('this is gametime')
-        print(gameTime)  # alarm off button
-        #showTimer(int(gameTime),00)
+        print(gameTime)  
         gameStatus = "started"
     
+    if request.method == "GET" and request.args.get("GameTimeB", ""):
+        gameTimeB = request.args.get("GameTimeB", "")
+        print('this is gametime')
+        print(gameTimeB) 
+        gameStatus = "startedB"
    
     #showTimer(int(gameTime),00)
 
