@@ -49,9 +49,17 @@ def logicThread():
                     print(button.newTime)
                     print('thisis newtime ba')
                 else:
-                    m, s = divmod(button.newTime, 60)
+                    sec = button.newTime
+                    mins = button.newTime
+                    sec_value = str(sec)[-2:]
+                    min_value = str(mins)[:1]
+
+                 
+                    print("Converted sec value in hour:",sec_value)
+                    print("Converted sec value in minutes:",min_value)
+                    #m, s = divmod(button.newTime, 60)
                     
-                    showTimerc(int(m),int(s))
+                    showTimerc(int(min_value),int(sec_value))
                     
                       
             if flaskapp.gameStatus == 'startedB' and button.pushbutton2 == 'on':
@@ -62,9 +70,17 @@ def logicThread():
                     print(button.newTimeb)
                     print('thisis newtime bb')
                 else:
-                    m, s = divmod(button.newTimeb, 60)
+                    sec = button.newTimeb
+                    mins = button.newTimeb
+                    secs_value = str(sec)[-2:]
+                    mins_value = str(mins)[:1]
+
+                 
+                    print("Converted sec value in hour:",secs_value)
+                    print("Converted sec value in minutes:",mins_value)
+                    #m, s = divmod(button.newTime, 60)
                     
-                    showTimerd(int(m),int(s))                
+                    showTimerd(int(mins_value),int(secs_value))               
             
             #if button.pushbutton2 == 'on' and flaskapp.gameStatus == 'started':
             #    showTimerb(int(flaskapp.gameTime),00)
