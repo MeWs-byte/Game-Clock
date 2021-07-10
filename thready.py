@@ -1,0 +1,97 @@
+#!/usr/bin/env python
+
+import threading
+import time
+from segmentTimer import showTimer, showTimerb, endGame #, showTimerb
+from datetime import datetime, timedelta
+import flaskapp
+import button
+import blinky
+
+lock = threading.Lock()
+
+
+
+def flaskThread():
+   
+    while True:
+        print("flask")
+        flaskapp.flaskRunner()
+        
+        
+        lock.acquire()
+        keypressed = True
+        lock.release()
+        time.sleep(1) # wait 5 seconds
+
+def logicThread():
+    global gameTime, gameStatus, pushbutton1, pushbutton2, endGame, endIt
+    while True:
+        print(flaskapp.gameTime)
+        print(flaskapp.gameStatus)
+        print(endGame)
+        if endGame != 'True':
+            
+            if flaskapp.gameStatus == 'started' and button.pushbutton1 == 'on':
+                showTimer(int(flaskapp.gameTime),00)
+                #button.pushbutton1 = 'off'
+                #button.pushbutton2 = 'on'
+                
+            if flaskapp.gameStatus == 'started' and button.pushbutton2 == 'on':
+                showTimerb(int(flaskapp.gameTime),00)
+                #button.pushbutton1 = 'on'
+                #button.pushbutton2 = 'off'
+            
+            #if button.pushbutton2 == 'on' and flaskapp.gameStatus == 'started':
+            #    showTimerb(int(flaskapp.gameTime),00)
+                    
+            #lock.acquire()
+            #print(flaskapp.gameTime)
+            #lock.release()
+            time.sleep(0.00001)      
+
+def renderThread():
+    global gameTime, pushbutton1, pushbutton2
+    while True:
+        button.waitforpushbutton()
+        print(button.pushbutton1)
+        print(button.pushbutton2)
+        #showTimer(0,11)
+        time.sleep(0.1) 
+        
+def ledThread():
+    global pushbutton1, pushbutton2, endIt
+    while True:
+        if button.pushbutton1 == 'on':
+            blinky.ledOneOff()
+            blinky.ledTwoOn()
+
+        if button.pushbutton2 == 'on':
+
+            blinky.ledOneOn()
+            blinky.ledTwoOff() 
+            
+        if button.endIt == 'ended':
+            blinky.ledOneTwoQuickBlink()  
+                 
+        
+            
+        
+        time.sleep(0.1) # 0.001
+
+# create threads
+thread1 = threading.Thread(target = flaskThread, args = ())
+thread2 = threading.Thread(target = logicThread, args = ())
+thread3 = threading.Thread(target = renderThread, args = ())
+thread4 = threading.Thread(target = ledThread, args = ())
+
+# Starting the threads  
+thread1.start() 
+thread2.start() 
+thread3.start() 
+thread4.start() 
+# Waiting for both the threads to finish executing 
+thread1.join()
+thread2.join()
+thread3.join()
+thread4.join()
