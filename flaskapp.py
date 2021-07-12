@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for, flash
 from segmentTimer import showTimer
-import button 
+import button
+import blinky
 
 gameTime = ""
 gameTimeB = ""
@@ -32,12 +33,14 @@ def index():
         print('this is gametime')
         print(gameTime)  
         gameStatus = "started"
+        blinky.ledOneTwoBlink()
     
     if request.method == "GET" and request.args.get("GameTimeB", ""):
         gameTimeB = request.args.get("GameTimeB", "")
         print('this is gametime')
         print(gameTimeB) 
         gameStatus = "startedB"
+        blinky.ledOneTwoBlink()
     if request.method == "GET" and request.args.get("reset", ""):
         resetMe = request.args.get("reset", "")
         print('this is reset')
