@@ -10,17 +10,58 @@ def ledOneTwoBlink():
     
     GPIO.output(14, GPIO.HIGH) # Turn on
  
-    time.sleep(1)
+    time.sleep(0.1)
     GPIO.output(14, GPIO.LOW) # Turn on
  
-    time.sleep(1)   
+    time.sleep(0.1)   
     GPIO.output(15, GPIO.HIGH) # Turn on
     
-    time.sleep(1)
+    time.sleep(0.1)
 
     GPIO.output(15, GPIO.LOW) # Turn on
     
-    time.sleep(1)
+    time.sleep(0.1)
+    
+    GPIO.output(14, GPIO.HIGH) # Turn on
+ 
+    time.sleep(0.1)
+    GPIO.output(14, GPIO.LOW) # Turn on
+ 
+    time.sleep(0.1)   
+    GPIO.output(15, GPIO.HIGH) # Turn on
+    
+    time.sleep(0.1)
+
+    GPIO.output(15, GPIO.LOW) # Turn on
+    
+    time.sleep(0.1)
+    # now both high and low 
+    GPIO.output(14, GPIO.HIGH) # Turn on
+ 
+    GPIO.output(15, GPIO.HIGH) # Turn on
+    time.sleep(0.2)
+    GPIO.output(14, GPIO.LOW) # Turn off
+ 
+    GPIO.output(15, GPIO.LOW) # Turn off   
+    # now both high and low 
+    GPIO.output(14, GPIO.HIGH) # Turn on
+ 
+    GPIO.output(15, GPIO.HIGH) # Turn on
+    time.sleep(0.2)
+    GPIO.output(14, GPIO.LOW) # Turn off
+ 
+    GPIO.output(15, GPIO.LOW) # Turn off   
+    time.sleep(0.2)
+    # now both high and low 
+    GPIO.output(14, GPIO.HIGH) # Turn on
+ 
+    GPIO.output(15, GPIO.HIGH) # Turn on
+    time.sleep(0.2)
+    GPIO.output(14, GPIO.LOW) # Turn off
+ 
+    GPIO.output(15, GPIO.LOW) # Turn off   
+    time.sleep(0.2)
+    time.sleep(0.2)
     
 def ledOneOn():
     
