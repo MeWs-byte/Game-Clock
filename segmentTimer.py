@@ -1,5 +1,6 @@
 # Retro Display 15min timer V2
 # Tony Goodhew 29 April 2017
+# a cat showed up and tweaked the code
  
 # Import required libraries
 import RPi.GPIO as GPIO
