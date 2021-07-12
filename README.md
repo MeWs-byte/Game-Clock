@@ -1,6 +1,7 @@
 # GameClock - a turn based timer
 This is a pi zero based gameclock to keep track of time during the game of Go, chess, whatever you want a turn based timer for .
 
+```sudo python3 thready.py´´´
 
 -You can input the time settings from a webserver on your local network running on the adress of your Pi Zero on port 5000
 
@@ -15,4 +16,7 @@ This is a pi zero based gameclock to keep track of time during the game of Go, c
 * 2 LEDs
 * 2 Pushbuttons
 * Pi Zero
- ° 
+ 
+ Schematics can be found in the hardware folder to build your circuit.
+ 
+  
