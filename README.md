@@ -1,13 +1,13 @@
 # GameClock - a turn based timer
 This is a pi zero based gameclock to keep track of time during the game of Go, chess, whatever you want a turn based timer for .
 
-*Download this repo to your pi 
+* Download this repo to your pi 
 `git clone https://github.com/MeWs-byte/Game-Clock.git`
-*Go into the folder
+* Go into the folder
 `cd Game-Clock`
-*Install requirements
+* Install requirements
 `sudo pip3 install -r requirements.txt`
-*Run the program to test if everything works
+* Run the program to test if everything works
 `sudo python3 thready.py`
 
 -Once the program is running you can input the time settings from a webserver on your local network running on the adress of your Pi Zero on port 5000
