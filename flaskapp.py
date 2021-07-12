@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for, flash
 from segmentTimer import showTimer
-
+import button 
 
 gameTime = ""
 gameTimeB = ""
@@ -16,6 +16,7 @@ app.secret_key = b'_1#y2l"F4Q8z\n\xec]/'
 def index():
     
     global gameTime, gameStatus, gameTimeB
+    global endIt
     
     if request.method == "POST":
         try:
@@ -37,6 +38,12 @@ def index():
         print('this is gametime')
         print(gameTimeB) 
         gameStatus = "startedB"
+    if request.method == "GET" and request.args.get("reset", ""):
+        resetMe = request.args.get("reset", "")
+        print('this is reset')
+        #print(resetMe) 
+        gameStatus = "unstarted"
+        button.endIt = 'ended'
    
     #showTimer(int(gameTime),00)
 
