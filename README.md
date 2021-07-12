@@ -28,7 +28,7 @@ This is a pi zero based gameclock to keep track of time during the game of Go, c
  [ Schematics can be found in the hardware folder to build your circuit. ](/hardware)
  
  
- ##EXTRA: 
+ ### EXTRA: 
  
  Personally I want the program to run every time the pi boots, let's run it as a systemd service!
  
