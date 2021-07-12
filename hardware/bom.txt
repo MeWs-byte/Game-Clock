@@ -3,3 +3,6 @@
 2 LEDs
 2 Pushbuttons 3-5v
 Pi Zero + SD card + power supply 
+
+
+You can also get 2 arcade buttons with leds to add extra coolness 
