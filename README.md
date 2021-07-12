@@ -1,4 +1,4 @@
-# GameClock - a turn based timer
+# GameClock - a connected turn based timer
 This is a pi zero based gameclock to keep track of time during the game of Go, chess, whatever you want a turn based timer for .
 
 * Download this repo to your pi 
