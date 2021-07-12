@@ -31,26 +31,6 @@ This is a pi zero based gameclock to keep track of time during the game of Go, c
  
  Personally I want the program to run every time the pi boots, let's run it as a systemd service!
  
- systemd service
-
-save configuration as `sudo nano /lib/systemd/system/miflo.service`
-
-contents of file:
-
-[Unit]
-Description=MiFlo
-After=network.target
-
-[Service]
-ExecStart=/usr/bin/python3 main.py
-WorkingDirectory=/home/pi/MiFloV2
-StandardOutput=inherit
-StandardError=inherit
-Restart=always
-User=root
-
-[Install]
-WantedBy=multi-user.target
-
-sudo chmod 777 /lib/systemd/system/miflo.service sudo systemctl daemon-reload sudo systemctl enable miflo.service
+ save configuration as 
+`sudo nano /lib/systemd/system/miflo.service`
  
