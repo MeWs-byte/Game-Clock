@@ -12,7 +12,7 @@ This is a pi zero based gameclock to keep track of time during the game of Go, c
 
 -Once the program is running you can input the time settings from a webserver on your local network running on the adress of your Pi Zero on port 5000
 
--http://<IPOFPI>:5000
+-http://THEIPOFYOURPI:5000
 
 -Input time and game mode in the webserver and each press your button to end your turn. If your LED is burning it means that the current time being displayed is yours. If you want to end the game prematurely just tap the reset button in the web app. 
 
