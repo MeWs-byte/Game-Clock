@@ -1,9 +1,16 @@
 # GameClock - a turn based timer
 This is a pi zero based gameclock to keep track of time during the game of Go, chess, whatever you want a turn based timer for .
 
+Download this repo to your pi 
+`git clone https://github.com/MeWs-byte/Game-Clock.git`
+Go into the folder
+`cd Game-Clock`
+Install requirements
+`sudo pip3 install -r requirements.txt`
+Run the program to test if everything works
 `sudo python3 thready.py`
 
--You can input the time settings from a webserver on your local network running on the adress of your Pi Zero on port 5000
+-Once the program is running you can input the time settings from a webserver on your local network running on the adress of your Pi Zero on port 5000
 
 -http://<IPOFPI>:5000
 
@@ -19,4 +26,31 @@ This is a pi zero based gameclock to keep track of time during the game of Go, c
  
  Schematics can be found in the hardware folder to build your circuit.
  
-  
+ 
+ ##EXTRA: 
+ 
+ Personally I want the program to run every time the pi boots, let's run it as a systemd service!
+ 
+ systemd service
+
+save configuration as `sudo nano /lib/systemd/system/miflo.service`
+
+contents of file:
+
+[Unit]
+Description=MiFlo
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python3 main.py
+WorkingDirectory=/home/pi/MiFloV2
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+User=root
+
+[Install]
+WantedBy=multi-user.target
+
+sudo chmod 777 /lib/systemd/system/miflo.service sudo systemctl daemon-reload sudo systemctl enable miflo.service
+ 
