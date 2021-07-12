@@ -24,7 +24,8 @@ This is a pi zero based gameclock to keep track of time during the game of Go, c
 * 2 Pushbuttons
 * Pi Zero
  
- Schematics can be found in the hardware folder to build your circuit.
+
+ [ Schematics can be found in the hardware folder to build your circuit. ](/hardware)
  
  
  ##EXTRA: 
