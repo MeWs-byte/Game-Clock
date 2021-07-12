@@ -36,12 +36,12 @@ This is a pi zero based gameclock to keep track of time during the game of Go, c
 * Paste this into the file:
  ```
 [Unit]
-Description=MiFlo
+Description=gameclock
 After=network.target
 
 [Service]
-ExecStart=/usr/bin/python3 main.py
-WorkingDirectory=/home/pi/MiFloV2
+ExecStart=/usr/bin/python3 thready.py
+WorkingDirectory=/home/pi/Game-Clock
 StandardOutput=inherit
 StandardError=inherit
 Restart=always
@@ -51,3 +51,6 @@ User=root
 WantedBy=multi-user.target
 ```
  
+ * `sudo chmod 777 /lib/systemd/system/gameclock.service`
+* `sudo systemctl daemon-reload`
+* `sudo systemctl enable gameclock.service`
