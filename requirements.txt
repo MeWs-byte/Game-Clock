@@ -1,0 +1,3 @@
+gpiozero==1.6.2
+Flask==2.0.1
+RPi==0.0.1
